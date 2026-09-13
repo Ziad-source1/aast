@@ -17,10 +17,8 @@ app.use(express.json());
 // SUPABASE CONFIGURATION
 // ========================================
 
-const SUPABASE_URL = "https://gqiuqxhqhsgaouyuhjkw.supabase.co";
-
-const SUPABASE_KEY =
-    "YOUR_PUBLISHABLE_KEY";
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
 
 
 // Create Supabase client
