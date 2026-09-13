@@ -91,7 +91,11 @@ app.get("/users/:id", async (req, res) => {
         }
 
 
-        const { email, phone, ...safeUserData } = data;
+        const safeUserData = Object.fromEntries(
+            Object.entries(data).filter(([column]) =>
+                !["phone_no", "gmail"].includes(column.toLowerCase())
+            )
+        );
 
         // User found
         return res.status(200).json({
