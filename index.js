@@ -91,10 +91,12 @@ app.get("/users/:id", async (req, res) => {
         }
 
 
+        const { email, phone, ...safeUserData } = data;
+
         // User found
         return res.status(200).json({
             success: true,
-            data: data
+            data: safeUserData
         });
 
 
